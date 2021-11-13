@@ -1,8 +1,30 @@
--- MariaDB 설치 (with HeidiSQL)
+# MariaDB 설치 (with HeidiSQL)
 
--- 파일시스템 vs DB
 
--- hustar 데이터베이스 생성
+# DB( DataBase ) 자료 저장 창고(공간)
+
+# RDB 관계형 데이터베이스
+- PL-SQL (Oracle)
+- T-SQL (MSSQL)
+- Sql (MySQL, MariaDB)
+
+# 파일시스템 vs DB시스템 (a.txt)
+저 a.txt
+다른 a.txt
+
+# 테이블 (스키마)
+DDL 정의어
+DML 조작어
+DCL 제어어
+
+C (Create) - insert
+R (Read) -   select
+U (Update) - update
+D (Delete) - delete
+
+
+# hustar 데이터베이스 생성
+-- 쿼리문 작성
 
 -- 테이블 생성
 CREATE TABLE t_board (
