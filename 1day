@@ -1,0 +1,19 @@
+-- 테이블 생성
+CREATE TABLE t_board (
+	title VARCHAR(100),
+	ctnt VARCHAR(2000),
+	writer CHAR(5),
+	rdt DATETIME
+);
+
+-- 아아아아아아아아 주석은 이걸로 처리
+/* 
+ㅁㄴㅇㄻㄴㅇㄻㄹ
+*/
+
+-- Create 값 넣기
+INSERT INTO t_board
+(title, ctnt, writer, rdt)
+VALUES
+('반가워요', 'ㅋㅋㅋㅋ', '홍길동', NOW());
+
