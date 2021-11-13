@@ -1,3 +1,9 @@
+-- MariaDB 설치 (with HeidiSQL)
+
+-- 파일시스템 vs DB
+
+-- hustar 데이터베이스 생성
+
 -- 테이블 생성
 CREATE TABLE t_board (
 	title VARCHAR(100),
