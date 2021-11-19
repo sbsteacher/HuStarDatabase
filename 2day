@@ -160,3 +160,48 @@ VALUES
 (4, '음악감상'),
 (5, '게임'),
 (6, '농구');
+
+
+-- FK (Foreign Key) 외래키, FK를 거는 이유는 잘 못 된 값이 입력되지 않기 위해 한다.
+
+CREATE TABLE t_user_hobby(
+	iuser INT UNSIGNED,
+	ihobby INT UNSIGNED,
+	PRIMARY KEY(iuser, ihobby),
+	FOREIGN KEY (iuser) REFERENCES t_user(iuser),
+	FOREIGN KEY (ihobby) REFERENCES t_hobby(ihobby)
+);
+
+-- FK가 걸려있기 때문에 iuser값은 t_user테이블에 있는 iuser값만 사용할 수 있다.
+INSERT INTO t_user_hobby
+(iuser, ihobby)
+VALUES
+(100, 2);
+
+-- FK가 걸려있기 때문에 ihobby값은 t_hobby테이블에 있는 ihobby값만 사용할 수 있다.
+INSERT INTO t_user_hobby
+(iuser, ihobby)
+VALUES
+(2, 100);
+
+INSERT INTO t_user_hobby
+(iuser, ihobby)
+VALUES
+(1, 1),
+(2, 1),
+(2, 2),
+(4, 1),
+(4, 2),
+(4, 3),
+(4, 4),
+(5, 1),
+(5, 2),
+(5, 3);
+
+-- join을 걸어서 자료를 뿌림 (데이터 저장을 select 결과물처럼 하면 안 된다.)
+SELECT B.iuser, B.nm AS userNm, C.nm AS hobbyNm
+FROM t_user_hobby A
+INNER JOIN t_user B
+ON A.iuser = B.iuser
+INNER JOIN t_hobby C
+ON A.ihobby = C.ihobby;
