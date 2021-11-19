@@ -56,3 +56,107 @@ CREATE TABLE t_user(
 	gender INT UNSIGNED CHECK(gender IN (1, 2)),
 	rdt DATETIME DEFAULT NOW()
 );
+
+
+INSERT INTO t_user
+(iuser, nm, gender)
+VALUES
+(1, '홍길동', 1);
+
+-- PK값이 중복이 되지 않아야 insert가 된다.
+INSERT INTO t_user
+(iuser, nm, gender, age)
+VALUES
+(2, '홍길동', 1, 20);
+
+-- nm은 not null 속성이 있어서 insert 실패 > 즉, not null은 항상 값을 넣어줘야 함
+INSERT INTO t_user
+(iuser, gender, age)
+VALUES
+(3, 1, 20);
+
+-- gender에 check 제약조건이 걸려있음. (1, 2)값만 입력 가능! 밑에 쿼리문은 실행됨
+INSERT INTO t_user
+(iuser, nm, gender, age)
+VALUES
+(4, '신사임당', 3, 22);
+
+INSERT INTO t_user
+(iuser, nm, gender, age)
+VALUES
+(4, '신사임당', 2, 22);
+
+INSERT INTO t_user
+(iuser, nm, gender, age)
+VALUES
+(5, '김동산', 1, 32);
+
+INSERT INTO t_user
+(iuser, nm, gender, age)
+VALUES
+(6, '동네형', 1, 38);
+
+
+SELECT * FROM t_user
+WHERE gender = 1;
+
+
+SELECT * FROM t_user
+ORDER BY gender DESC, nm;
+
+
+SELECT * FROM t_user
+ORDER BY age DESC;
+
+-- where, order by 조합해서 사용가능
+SELECT * FROM t_user
+WHERE gender = 1
+ORDER BY age;
+
+-- where 절에 여러 조건을 걸 수도 있다.
+SELECT * FROM t_user
+WHERE gender = 1 AND age <= 30
+ORDER BY age;
+
+
+-- 그룹함수 (숫자)
+SELECT COUNT(*) FROM t_user; -- count함수 레코드 수 알려줌
+SELECT SUM(age) FROM t_user; -- sum함수 age모든 숫자 더하기
+SELECT MIN(age) FROM t_user; -- min함수 age값 중 가장 작은 값
+SELECT MAX(age) FROM t_user; -- max함수 age값 중 가장 큰 값
+SELECT AVG(age) FROM t_user; -- avg함수 age 평균 값
+
+-- group by 절
+SELECT gender, COUNT(*), MIN(age), MAX(age), AVG(age), SUM(age) FROM t_user
+GROUP BY gender;
+
+
+-- select 명령어 순서
+-- select from
+-- join
+-- where
+-- group by
+-- having
+-- order by
+-- limit
+
+
+-- 정규화 설명 (제1~3정규형)
+
+-- 사람-취미 (N:M) 다대다 관계, 실습
+-- 다대다 관계는 테이블 3개가 나온다. t_user, t_hobby, t_user_hobby
+
+CREATE TABLE t_hobby(
+	ihobby INT UNSIGNED PRIMARY KEY,
+	nm VARCHAR(10) NOT null
+);
+
+INSERT INTO t_hobby
+(ihobby, nm)
+VALUES
+(1, '독서'),
+(2, '영화감상'),
+(3, '등산'),
+(4, '음악감상'),
+(5, '게임'),
+(6, '농구');
