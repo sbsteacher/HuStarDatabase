@@ -42,6 +42,7 @@ WHERE writer = 'hong';
 -- DELETE FROM 테이블명 WHERE 조건식
 -- delete문에는 where절이 필수이다. where절이 없으면 모든 레코드가 삭제된다.
 
+DELETE FROM t_board WHERE writer = 'sql';
 
 /////////////////////////////////////
 
