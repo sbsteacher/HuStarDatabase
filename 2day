@@ -132,6 +132,10 @@ SELECT AVG(age) FROM t_user; -- avg함수 age 평균 값
 SELECT gender, COUNT(*), MIN(age), MAX(age), AVG(age), SUM(age) FROM t_user
 GROUP BY gender;
 
+-- having 절 : group by의 조건식(where)
+SELECT gender, COUNT(*), MIN(age), MAX(age), AVG(age), SUM(age) FROM t_user
+GROUP BY gender
+having MIN(age) > 21;
 
 -- select 명령어 순서
 -- select from
