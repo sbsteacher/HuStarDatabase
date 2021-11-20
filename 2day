@@ -19,7 +19,7 @@ VALUES
 
 -- UPDATE 테이블명 SET 컬럼명 = 변경할 값 WHERE 조건식
 -- WHERE 절이 없으면 전체 레코드
--- WHERE 절 부분만 수정할 때 사용한다. 
+-- WHERE 절이 있어야 레코드 중 일부만 수정할 수 있다. 
 -- 예) 작성자가 '홍길동'인 레코드만 가져오자
 SELECT * FROM t_board
 WHERE writer = '홍길동';
