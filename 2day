@@ -213,11 +213,11 @@ INNER JOIN t_hobby C
 ON A.ihobby = C.ihobby;
 
 
-# TODO : index, left join vs inner join 설명
-# TODO : index, left join vs inner join 설명
-# TODO : index, left join vs inner join 설명
-# TODO : index, left join vs inner join 설명
-# TODO : index, left join vs inner join 설명
+# TODO : 서브쿼리, left join vs inner join 설명
+# TODO : 서브쿼리, left join vs inner join 설명
+# TODO : 서브쿼리, left join vs inner join 설명
+# TODO : 서브쿼리, left join vs inner join 설명
+# TODO : 서브쿼리, left join vs inner join 설명
 
 
 
