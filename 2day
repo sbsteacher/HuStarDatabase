@@ -49,6 +49,7 @@ DELETE FROM t_board WHERE writer = 'sql';
 제약조건 > 잘 못 된 값이 들어가지 않도록 막는다.
 
 PK (Primary Key) : 기본키, 레코드를 대표하는 컬럼, 모든 테이블은 PK를 가지고 있다.
+                 : unique, not null 제약조건과 index 가 설정된다.
 
 CREATE TABLE t_user(
 	iuser INT UNSIGNED PRIMARY KEY,
