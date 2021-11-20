@@ -211,3 +211,14 @@ INNER JOIN t_user B
 ON A.iuser = B.iuser
 INNER JOIN t_hobby C
 ON A.ihobby = C.ihobby;
+
+
+# TODO : index, left join vs inner join 설명
+# TODO : index, left join vs inner join 설명
+# TODO : index, left join vs inner join 설명
+# TODO : index, left join vs inner join 설명
+# TODO : index, left join vs inner join 설명
+
+
+
+
